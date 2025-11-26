@@ -8,8 +8,19 @@ Test Teardown     Run Keyword And Ignore Error    Capture Failure Screenshot    
 *** Test Cases ***
 Checkout Successfully
     Given User Open SauceDemo Login Page
-    When User Login With    standard_user    secret_sauce
-    And User Adds Product    Sauce Labs Backpack
+    When I login with username "standard_user" and password "secret_sauc"
+    And User adds product "Sauce Labs Backpack"
     And User Go To Cart
-    And User Checkout With    John    Doe    12345
+    And User completes checkout using first name "John", last name "Doe", and zip code "12345"
     Then Checkout Should Be Successful
+
+
+*** Keywords ***
+I login with username "${username}" and password "${password}"
+     When User Login With    ${username}    ${password}
+     
+User adds product "${product}"
+     And User Adds Product    ${product}
+
+User completes checkout using first name "${firstname}", last name "${lastname}", and zip code "${zipcode}"
+     And User Checkout With    ${firstname}    ${lastname}    ${zipcode}  
