@@ -1,0 +1,4 @@
+robotframework
+playwright
+robotframework-browser
+allure-python-commons
