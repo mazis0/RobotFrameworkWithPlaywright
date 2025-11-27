@@ -8,7 +8,7 @@ Test Teardown     Run Keyword And Ignore Error    Capture Failure Screenshot    
 *** Test Cases ***
 Checkout Successfully
     Given User Open SauceDemo Login Page
-    When I login with username "standard_user" and password "secret_sauc"
+    When I login with username "standard_user" and password "secret_sauce"
     And User adds product "Sauce Labs Backpack"
     And User Go To Cart
     And User completes checkout using first name "John", last name "Doe", and zip code "12345"
